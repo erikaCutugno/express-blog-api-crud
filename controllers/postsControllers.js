@@ -1,10 +1,17 @@
 const postsData = require("../data/post")
 
-
+//Index
 const index = (req, res) => {
-    res.json(postsData)
+let filteredPosts = postsData;
+const {tags} = req.query;
+
+if (tags){
+    filteredPosts = postsData.filter(elm => elm.tags.includes(tags));
 }
 
+    res.json(filteredPosts)
+}
+//Show
 const show = (req, res) => {
     const posts = postsData.find((elm) => elm.id == req.params.id)
     if(!posts){
@@ -18,19 +25,20 @@ const show = (req, res) => {
     }
     res.json(posts)
 }
-
+//Store
 const store = (req, res) => {
     res.send("Creazione nuovo post")
 }
-
+//update
 const update = (req, res) => {
     res.send(`Modifica integrale del post: ${req.params.id}`)
 }
- 
+ //Modify
 const modify = (req, res) => {
     res.send(`Modifica parziale del post:${req.params.id}`)
 }
- const destroy = (req, res) => {
+//Destroy
+const destroy = (req, res) => {
     const posts = postsData.find((elm) => elm.id == req.params.id)
 
     if(!posts){
@@ -46,4 +54,5 @@ const modify = (req, res) => {
     console.log(postsData)
     res.sendStatus(204)
  }
+ 
 module.exports = { index, show, store, update, modify, destroy}
