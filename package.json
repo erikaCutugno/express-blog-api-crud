@@ -1,0 +1,23 @@
+{
+  "name": "express-blog-routing",
+  "version": "1.0.0",
+  "description": "Creare un file di routing",
+  "main": "app.js",
+  "scripts": {
+    "start": "node app.js",
+    "watch": "node --watch app.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/erikaCutugno/express-blog-routing.git"
+  },
+  "author": "Erika Cutugno",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/erikaCutugno/express-blog-routing/issues"
+  },
+  "homepage": "https://github.com/erikaCutugno/express-blog-routing#readme",
+  "dependencies": {
+    "express": "^4.21.2"
+  }
+}
