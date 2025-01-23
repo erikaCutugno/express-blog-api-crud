@@ -5,8 +5,7 @@ const middlewareValidationId = require("../middlewares/validationParamId");
 
 const router = express.Router();
 
-router.use("/:id", middlewareValidationId);
-router.use("/:id", middlewarePostFound);
+router.use("/:id", middlewareValidationId, middlewarePostFound);
 
 //index
 router.get("/", postsControllers.index);
