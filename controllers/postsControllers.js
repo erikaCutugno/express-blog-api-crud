@@ -46,7 +46,23 @@ const store = (req, res) => {
 
 //update
 const update = (req, res) => {
-  res.send(`Modifica integrale del post: ${req.params.id}`);
+  const posts = postsData.find((elm) => elm.id == req.params.id);
+  if (!posts) {
+    res.status(404);
+
+    return res.json({
+      status: 404,
+      error: "Not Found",
+      message: "Post non trovato",
+    });
+  }
+
+  posts.title = req.body.title;
+  posts.image = req.body.image;
+  posts.content = req.body.content;
+  posts.tags = req.body.tags;
+
+  res.json(posts);
 };
 //Modify
 const modify = (req, res) => {
