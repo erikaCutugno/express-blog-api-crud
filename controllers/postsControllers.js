@@ -11,6 +11,7 @@ const index = (req, res) => {
 
   res.json(filteredPosts);
 };
+
 //Show
 const show = (req, res) => {
   const posts = postsData.find((elm) => elm.id == req.params.id);
@@ -27,8 +28,22 @@ const show = (req, res) => {
 };
 //Store
 const store = (req, res) => {
-  res.send("Creazione nuovo post");
+  const id = postsData[postsData.length - 1].id + 1;
+
+  const newPost = {
+    id,
+    title: req.body.title,
+    image: req.body.image,
+    content: req.body.content,
+    tags: req.body.tags,
+  };
+
+  postsData.push(newPost);
+
+  res.status(201);
+  res.json(newPost);
 };
+
 //update
 const update = (req, res) => {
   res.send(`Modifica integrale del post: ${req.params.id}`);
