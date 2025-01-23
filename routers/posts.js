@@ -1,10 +1,12 @@
 const express = require("express");
 const postsControllers = require("../controllers/postsControllers");
+const middlewarePostFound = require("../middlewares/postFound");
 const middlewareValidationId = require("../middlewares/validationParamId");
 
 const router = express.Router();
 
 router.use("/:id", middlewareValidationId);
+router.use("/:id", middlewarePostFound);
 
 //index
 router.get("/", postsControllers.index);
