@@ -38,6 +38,7 @@ const store = (req, res) => {
     image: req.body.image,
     content: req.body.content,
     tags: req.body.tags,
+    available: req.body.available,
   };
 
   postsData.push(newPost);
@@ -64,6 +65,7 @@ const update = (req, res) => {
   posts.image = req.body.image;
   posts.content = req.body.content;
   posts.tags = req.body.tags;
+  posts.available = req.body.available;
 
   res.json(posts);
 };

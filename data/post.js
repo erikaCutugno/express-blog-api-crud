@@ -6,6 +6,7 @@ const posts = [
     content:
       "Il ciambellone è il dolce ideale per ogni momento della giornata. Facile da preparare, soffice e goloso, rappresenta la dolcezza della cucina casalinga.",
     tags: ["Dolci", "Ciambellone", "Ricetta", "Tradizione", "Colazione"],
+    available: true,
   },
   {
     id: 2,
@@ -14,6 +15,7 @@ const posts = [
     content:
       "Preparare i cracker in casa è più facile di quanto sembri! Croccanti, leggeri e perfetti come snack salato, sono un'ottima alternativa ai prodotti industriali.",
     tags: ["Snack", "Cracker", "Ricetta Facile", "Fatto in Casa", "Leggero"],
+    available: false,
   },
   {
     id: 3,
@@ -22,6 +24,7 @@ const posts = [
     content:
       "Il pane fritto è una preparazione semplice e golosa, ideale per accompagnare un piatto salato o per essere gustato come snack. Un'esplosione di sapore!",
     tags: ["Pane", "Fritto", "Snack", "Ricetta Facile", "Cucina Italiana"],
+    available: true,
   },
   {
     id: 4,
@@ -36,6 +39,7 @@ const posts = [
       "Cucina Italiana",
       "Vegetariano",
     ],
+    available: true,
   },
   {
     id: 5,
@@ -50,6 +54,7 @@ const posts = [
       "Contadina",
       "Cucina Italiana",
     ],
+    available: false,
   },
 ];
 
